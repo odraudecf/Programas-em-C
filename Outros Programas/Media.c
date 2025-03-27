@@ -3,24 +3,33 @@
 
 int main()
 {
-    float nota;
-    float soma = 0;
-    float media;
-    int cont;
-    int notaspositivas = 0;
+    int QuantNotas;
 
-    for(cont = 1;cont <= 5; cont++)
-    {
-        printf("Insira uma nota %d:\n", cont);
-        scanf("%f", &nota);
-        if(nota >= 0)
-        {
-                soma = soma + nota;
-                notaspositivas++;
-        }
+    printf("Quantas notas deseja inserir?\n");
+    scanf("%d", &QuantNotas);
+
+    int Nota[QuantNotas];
+    int Soma = 0;
+    float Media = 0;
+
+    system("cls");
+
+    printf("Quantidade de notas a serem inseridas: %d\n\n", QuantNotas);
+
+    for(int i = 0; i < QuantNotas; i++){
+
+        printf("Digite a nota %d:", i+1);
+        scanf("%d", &Nota[i]);
+
+        Soma = Soma + Nota[i];
+
     }
-    media = soma / notaspositivas;
 
-    printf("A media das notas foi: %.2f \n", media);
-    printf("A soma das notas foi: %.2f", soma);
+    Media = Soma/QuantNotas;
+
+    printf("\nQuantidade de notas inseridas: %d\n", QuantNotas);
+    printf("Soma das notas: %d\n", Soma);
+    printf("Media das notas: %.2f\n", Media);
+
+    return 0;
 }
